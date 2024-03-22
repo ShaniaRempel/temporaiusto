@@ -1,0 +1,8 @@
+ignores:
+  - '@electron/remote'
+  - '@mongodb-js/prettier-config-compass'
+  - '@mongodb-js/tsconfig-compass'
+  - 'eventemitter3'
+  - 'resolve'
+ignore-patterns:
+  - 'dist'

@@ -1,0 +1,18 @@
+ignores:
+  - '@mongodb-js/prettier-config-compass'
+  - '@mongodb-js/tsconfig-compass'
+  - '@types/chai'
+  - '@types/sinon-chai'
+  - 'sinon'
+  # peerdep
+  - 'core-js'
+  # peerdep
+  - 'postcss'
+  # used implicitly by the bin/webpack file
+  - 'webpack-cli'
+  # used implicitly by the webpack loaders file
+  - 'browserslist'
+  - '@babel/runtime'
+  - 'babel-plugin-istanbul'
+  # recursive
+  - 'mongodb-compass'

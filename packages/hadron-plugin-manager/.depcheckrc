@@ -1,0 +1,4 @@
+ignores:
+  - 'react-dom'
+  # Fake dependency used in tests
+  - '@external-plugins/example3'

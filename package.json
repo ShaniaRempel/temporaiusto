@@ -1,0 +1,33 @@
+{
+  "name": "temporaiusto",
+  "description": "Monorepo that includes Compass and all its dependencies",
+  "homepage": "https://github.com/ShaniaRempel/temporaiusto.git",
+  "author": "FrederikMueller",
+  "shortcutFolderName": "MongoDB",
+  "license": "SSPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShaniaRempel/temporaiusto.git"
+  },
+  "//": "See depcheck for why we have some of these dependencies at the root of the monorepo",
+  "devDependencies": {
+    "@babel/core": "7.16.0",
+    "@babel/parser": "7.16.0",
+    "@mongodb-js/bump-monorepo-packages": "^0.2.1",
+    "@testing-library/dom": "^8.11.1",
+    "@webpack-cli/serve": "^0.2.0",
+    "babel-loader": "^7.1.5",
+    "lerna": "^4.0.0",
+    "node-gyp": "^8.4.1"
+  },
+  "engines": {
+    "node": ">=16.15.1",
+    "npm": ">=8.15.1"
+  },
+  "workspaces": [
+    "packages/*",
+    "configs/*",
+    "scripts"
+  ],
+  "version": "1.0.0"
+}

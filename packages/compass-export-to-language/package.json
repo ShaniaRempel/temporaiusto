@@ -1,0 +1,99 @@
+{
+  "name": "@mongodb-js/compass-export-to-language",
+  "productName": "compass-export-to-language Plugin",
+  "description": "Export MongoDB queries and aggregations to various languages",
+  "author": {
+    "name": "MongoDB Inc",
+    "email": "compass@mongodb.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://jira.mongodb.org/projects/COMPASS/issues",
+    "email": "compass@mongodb.com"
+  },
+  "homepage": "https://github.com/mongodb-js/compass",
+  "version": "8.5.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mongodb-js/compass.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "SSPL",
+  "main": "dist/index.js",
+  "compass:main": "src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    "browser": "./dist/browser.js",
+    "require": "./dist/index.js"
+  },
+  "compass:exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "bootstrap": "npm run postcompile",
+    "prepublishOnly": "npm run compile",
+    "compile": "npm run webpack -- --mode production",
+    "prewebpack": "rimraf ./dist",
+    "webpack": "webpack-compass",
+    "postcompile": "tsc --emitDeclarationOnly",
+    "start": "npm run webpack serve -- --mode development",
+    "analyze": "npm run webpack -- --mode production --analyze",
+    "typecheck": "tsc -p tsconfig-lint.json --noEmit",
+    "eslint": "eslint",
+    "prettier": "prettier",
+    "lint": "npm run eslint . && npm run prettier -- --check .",
+    "depcheck": "compass-scripts check-peer-deps && depcheck",
+    "check": "npm run typecheck && npm run lint && npm run depcheck",
+    "check-ci": "npm run check",
+    "test": "mocha",
+    "test-electron": "xvfb-maybe electron-mocha --no-sandbox",
+    "test-cov": "nyc -x \"**/*.spec.*\" --reporter=lcov --reporter=text --reporter=html npm run test",
+    "test-watch": "npm run test -- --watch",
+    "test-ci": "npm run test-cov",
+    "reformat": "npm run prettier -- --write ."
+  },
+  "peerDependencies": {
+    "@mongodb-js/compass-components": "^1.5.0",
+    "@mongodb-js/compass-logging": "*",
+    "@mongodb-js/compass-maybe-protect-connection-string": "^0.3.0",
+    "@mongodb-js/mongodb-redux-common": "*",
+    "bson-transpilers": "*",
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "@mongodb-js/compass-components": "^1.5.0",
+    "@mongodb-js/compass-logging": "^1.1.2",
+    "@mongodb-js/compass-maybe-protect-connection-string": "^0.3.0",
+    "@mongodb-js/mongodb-redux-common": "^2.0.4",
+    "bson-transpilers": "^2.0.2"
+  },
+  "devDependencies": {
+    "@mongodb-js/eslint-config-compass": "^1.0.2",
+    "@mongodb-js/mocha-config-compass": "^1.0.2",
+    "@mongodb-js/prettier-config-compass": "^1.0.0",
+    "@mongodb-js/tsconfig-compass": "^1.0.1",
+    "@mongodb-js/webpack-config-compass": "^1.0.5",
+    "@types/js-beautify": "^1.13.3",
+    "chai": "^4.3.6",
+    "compass-preferences-model": "^2.5.0",
+    "depcheck": "^1.4.1",
+    "enzyme": "^3.11.0",
+    "eslint": "^7.25.0",
+    "hadron-app-registry": "^9.0.3",
+    "js-beautify": "^1.14.7",
+    "mocha": "^8.4.0",
+    "mongodb-ns": "^2.4.0",
+    "nyc": "^15.1.0",
+    "prop-types": "^15.7.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "sinon": "^9.2.3"
+  }
+}

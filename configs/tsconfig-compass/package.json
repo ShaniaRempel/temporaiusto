@@ -1,0 +1,30 @@
+{
+  "name": "@mongodb-js/tsconfig-compass",
+  "version": "1.0.1",
+  "description": "Shared Compass Typescript configuration",
+  "license": "SSPL",
+  "files": [
+    "tsconfig.common.json",
+    "tsconfig.react.json"
+  ],
+  "peerDependencies": {
+    "typescript": "^4.8.3"
+  },
+  "devDependencies": {
+    "@mongodb-js/prettier-config-compass": "^1.0.0",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "check": "npm run lint",
+    "lint": "prettier --check .",
+    "reformat": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mongodb-js/compass.git"
+  },
+  "homepage": "https://github.com/mongodb-js/compass",
+  "publishConfig": {
+    "access": "public"
+  }
+}
